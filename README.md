@@ -1,0 +1,3 @@
+##### CRUD PHP in DAO #####
+
+this is my first CRUD in PHP, I tried to use DAO but it shouldn't be very good, there are things that I still need to improve such as a foreach() function that was not so good in that situation, I think I could have used a map() but when i tried it ended up not working very well, i will try more later but for now i want to leave this part at least "complete" and already post here on github.
