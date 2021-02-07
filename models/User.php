@@ -1,21 +1,21 @@
 <?php
 
-class Usuario {
-  private string $nome;
+class User {
+  private string $name;
   private string $email;
   private ?int $id;
 
-  public function __construct(string $nome, string $email, ?int $id = null) {
-    $this->setNome($nome);
+  public function __construct(string $name, string $email, ?int $id = null) {
+    $this->setName($name);
     $this->setEmail($email);
     $this->setId($id);
   } 
 
-  public function getNome(): string {
-    return $this->nome;
+  public function getName(): string {
+    return $this->name;
   }
-  private function setNome(string $nome) {
-    $this->nome = ucwords(trim($nome));
+  private function setName(string $name) {
+    $this->name = ucwords(strtolower(trim($name)));
   }
   
   public function getEmail(): string {
@@ -37,12 +37,12 @@ class Usuario {
 }
 
 
-interface UsuarioDAO {
-  public function add(Usuario $usuario);
+interface UserDAO {
+  public function add(User $user);
   public function findAll(): array;
-  public function findByEmail(string $email): ?Usuario;
+  public function findByEmail(string $email): ?User;
   public function checkEmail(string $emal, int $id): bool;
-  public function findById(int $id): ?Usuario;
-  public function update(Usuario $usuario);
-  public function delete(Usuario $usuario);
+  public function findById(int $id): ?User;
+  public function update(User $user);
+  public function delete(User $user);
 }

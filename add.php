@@ -1,10 +1,10 @@
 
-<h1>Adicionar Usuário</h1>
+<h1>Add User</h1>
 
-<form method="POST" action="adicionar_action.php">
+<form method="POST" action="add_action.php">
   <label>
-    Nome:<br>
-    <input type="text" name="name" placeholder="Nome">
+    Name:<br>
+    <input type="text" name="name" placeholder="Name">
   </label><br><br>
   <label>
     E-mail:<br>

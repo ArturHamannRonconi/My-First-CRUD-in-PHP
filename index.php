@@ -1,30 +1,30 @@
 <?php
 
 require 'config.php';
-require 'dao/UsuarioDaoMysql.php';
+require 'dao/UserDaoMysql.php';
 
-$usuarioDao = new UsuarioDaoMysql($pdo);
-$usuarios = $usuarioDao->findAll();
+$userDao = new UserDaoMysql($pdo);
+$users = $userDao->findAll();
 
 ?>
 
-<a href="adicionar.php">Adicionar usuário</a>
+<a href="add.php">Add User</a>
 
 <table border="1" width="100%">
   <tr>
     <th>ID</th>
-    <th>NOME</th>
+    <th>NAME</th>
     <th>EMAIL</th>
-    <th>AÇÕES</th>
+    <th>ACTIONS</th>
   </tr>
-  <?php foreach($usuarios as $usuario): ?>
+  <?php foreach($users as $user): ?>
     <tr>  
-      <td style="text-align:center;"><?= $usuario->getId() ?></td>
-      <td style="text-align:center;"><?= $usuario->getNome() ?></td>
-      <td style="text-align:center;"><?= $usuario->getEmail() ?></td>
+      <td style="text-align:center;"><?= $user->getId() ?></td>
+      <td style="text-align:center;"><?= $user->getName() ?></td>
+      <td style="text-align:center;"><?= $user->getEmail() ?></td>
       <td style="text-align:center;">
-        <a href="editar.php?id=<?= $usuario->getId() ?>">[Editar]</a>
-        <a href="excluir.php?id=<?= $usuario->getId() ?>" onclick="return alert('você deseja excluir o usuário <?= $usuario->getNome() ?>')">[Excluir]</a>
+        <a href="edit.php?id=<?= $user->getId() ?>">[Edit]</a>
+        <a href="delete.php?id=<?= $user->getId() ?>" onclick="return alert('You want to delete the user <?= $user->getName() ?>')">[delete]</a>
       </td>
     </tr>
   <?php endforeach ?>
