@@ -36,7 +36,6 @@ class User {
   }
 }
 
-
 interface UserDAO {
   public function add(User $user);
   public function findAll(): array;

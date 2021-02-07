@@ -1,5 +1,4 @@
 <?php
-require_once 'models/User.php';
 
 class UserDaoMysql implements UserDAO {
   private PDO $pdo;
@@ -51,7 +50,6 @@ class UserDaoMysql implements UserDAO {
     $sql = $this->pdo->prepare("SELECT * FROM users WHERE id = :id");
     $sql->bindValue(":id", $id);
     $sql->execute();
-
 
     if($sql->rowCount() === 0)
       return null;

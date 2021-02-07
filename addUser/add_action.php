@@ -1,7 +1,8 @@
 <?php
 
-require 'config.php';
-require 'dao/UserDaoMysql.php';
+require '../config.php';
+require '../models/User.php';
+require '../dao/UserDaoMysql.php';
 
 $userDao = new UserDaoMysql($pdo);
 
@@ -17,5 +18,6 @@ if($verify){
 
 $newUser = new User($name, $email);
 $userDao->add($newUser);
-header("Location: index.php");
+
+header("Location: ../index.php");
 exit;

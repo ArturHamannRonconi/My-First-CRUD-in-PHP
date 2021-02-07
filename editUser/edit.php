@@ -1,7 +1,8 @@
 <?php
 
-require 'config.php';
-require 'dao/UserDaoMysql.php';
+require '../config.php';
+require '../models/User.php';
+require '../dao/UserDaoMysql.php';
 
 $id = intval(filter_input(INPUT_GET, "id"));
 
@@ -9,7 +10,7 @@ $userDao = new UserDaoMysql($pdo);
 $user = $userDao->findById($id);
 
 if(!$user) {
-  header("Location: index.php");
+  header("Location: ../index.php");
   exit;
 }
 
